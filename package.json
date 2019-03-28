@@ -1,0 +1,32 @@
+{
+  "name": "GraduationProject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bzlom12/graduation-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bzlom12/graduation-project/issues"
+  },
+  "homepage": "https://github.com/Bzlom12/graduation-project#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "babel-loader": "^8.0.5",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.3.0"
+  },
+  "dependencies": {
+    "formdata-polyfill": "^3.0.17",
+    "promise-polyfill": "^8.1.0"
+  }
+}
