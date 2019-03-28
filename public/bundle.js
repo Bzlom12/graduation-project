@@ -960,13 +960,13 @@ __webpack_require__(/*! formdata-polyfill */ "../node_modules/formdata-polyfill/
 window.addEventListener('DOMContentLoaded', function () {
   "use strict";
 
-  console.log('good');
-
-  var modal = __webpack_require__(/*! ./parts/modal */ "./parts/modal.js"),
-      calc = __webpack_require__(/*! ./parts/calc */ "./parts/calc.js");
+  var modal = __webpack_require__(/*! ./parts/modal.js */ "./parts/modal.js"),
+      calc = __webpack_require__(/*! ./parts/calc.js */ "./parts/calc.js"),
+      mainSlide = __webpack_require__(/*! ./parts/slider.js */ "./parts/slider.js");
 
   modal();
   calc();
+  mainSlide();
 });
 
 if ('NodeList' in window && !NodeList.prototype.forEach) {
@@ -990,8 +990,7 @@ if ('NodeList' in window && !NodeList.prototype.forEach) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function calc() {
-  console.log('calc');
+function calc() {// console.log('calc');
 }
 
 module.exports = calc;
@@ -1005,11 +1004,41 @@ module.exports = calc;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function modal() {
-  console.log('modal');
+function modal() {// console.log('modal');
 }
 
 module.exports = modal;
+
+/***/ }),
+
+/***/ "./parts/slider.js":
+/*!*************************!*\
+  !*** ./parts/slider.js ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function mainSlide() {
+  var slideIndex = 1,
+      slides = document.querySelectorAll('.main-slider-item');
+
+  function showSlises(n) {
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+
+    slides.forEach(function (item) {
+      return item.style.display = 'none';
+    });
+    slides[slideIndex - 1].style.display = 'block';
+    slideIndex++;
+  }
+
+  showSlises(slideIndex);
+  var nextSlide = setInterval(showSlises, 4000);
+}
+
+module.exports = mainSlide;
 
 /***/ })
 

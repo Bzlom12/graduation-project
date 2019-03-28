@@ -1,5 +1,5 @@
 function modal() {
-    console.log('modal');
+    // console.log('modal');
 }
 
 module.exports = modal;

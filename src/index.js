@@ -3,12 +3,14 @@ require('formdata-polyfill');
 window.addEventListener('DOMContentLoaded', function() {
 
     "use strict";
-    console.log('good');
-    let modal = require('./parts/modal'),
-        calc = require('./parts/calc');
+    let modal = require('./parts/modal.js'),
+        calc = require('./parts/calc.js'),
+        mainSlide = require('./parts/slider.js');
+        
 
     modal();
     calc();
+    mainSlide();
 });
 
 if ('NodeList' in window && !NodeList.prototype.forEach) {
