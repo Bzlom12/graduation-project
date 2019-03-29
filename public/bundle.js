@@ -1091,7 +1091,20 @@ function modal() {
     }
   }
 
-  var timer = setInterval(checkScroll, 1000);
+  var timer = setInterval(checkScroll, 1000); //modal after 60sec
+
+  var sec = 0;
+
+  function sixtySec() {
+    if (sec == 60) {
+      openModal(modalConsultation);
+      clearInterval(sixtySec);
+    }
+
+    sec++;
+  }
+
+  var time = setInterval(sixtySec, 1000);
 }
 
 module.exports = modal;

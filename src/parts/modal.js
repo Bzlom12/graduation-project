@@ -52,7 +52,6 @@ function modal() {
     });
 
     //gift scroll down
-
     function checkScroll() {
         if (window.scrollY == 12138) {
             openModal(modalGift);
@@ -61,6 +60,17 @@ function modal() {
     }
     let timer = setInterval(checkScroll, 1000);
     
+    //modal after 60sec
+    let sec = 0;
+    function sixtySec() {
+        if (sec == 60) {
+            openModal(modalConsultation);
+            clearInterval(sixtySec);
+        }
+        sec++;
+    }
+    let time = setInterval(sixtySec, 1000);
+
 }
 
 module.exports = modal;
