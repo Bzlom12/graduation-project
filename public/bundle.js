@@ -960,11 +960,11 @@ __webpack_require__(/*! formdata-polyfill */ "../node_modules/formdata-polyfill/
 window.addEventListener('DOMContentLoaded', function () {
   "use strict";
 
-  var modal = __webpack_require__(/*! ./parts/modal.js */ "./parts/modal.js"),
+  var modalDesign = __webpack_require__(/*! ./parts/modalDesign.js */ "./parts/modalDesign.js"),
       calc = __webpack_require__(/*! ./parts/calc.js */ "./parts/calc.js"),
       mainSlide = __webpack_require__(/*! ./parts/slider.js */ "./parts/slider.js");
 
-  modal();
+  modalDesign();
   calc();
   mainSlide();
 });
@@ -997,17 +997,38 @@ module.exports = calc;
 
 /***/ }),
 
-/***/ "./parts/modal.js":
-/*!************************!*\
-  !*** ./parts/modal.js ***!
-  \************************/
+/***/ "./parts/modalDesign.js":
+/*!******************************!*\
+  !*** ./parts/modalDesign.js ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function modal() {// console.log('modal');
+function modalDesign() {
+  var button = document.querySelectorAll('.button-design'),
+      modal = document.querySelector('.popup-design'),
+      close = document.getElementById('close');
+  button.forEach(function (item) {
+    item.addEventListener('click', function () {
+      modal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  function closeModal() {
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+  }
+
+  close.addEventListener('click', function () {
+    closeModal();
+  });
+  modal.addEventListener('click', function () {
+    closeModal();
+  });
 }
 
-module.exports = modal;
+module.exports = modalDesign;
 
 /***/ }),
 
