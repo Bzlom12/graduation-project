@@ -960,11 +960,11 @@ __webpack_require__(/*! formdata-polyfill */ "../node_modules/formdata-polyfill/
 window.addEventListener('DOMContentLoaded', function () {
   "use strict";
 
-  var modalDesign = __webpack_require__(/*! ./parts/modalDesign.js */ "./parts/modalDesign.js"),
+  var modal = __webpack_require__(/*! ./parts/modal.js */ "./parts/modal.js"),
       calc = __webpack_require__(/*! ./parts/calc.js */ "./parts/calc.js"),
       mainSlide = __webpack_require__(/*! ./parts/slider.js */ "./parts/slider.js");
 
-  modalDesign();
+  modal();
   calc();
   mainSlide();
 });
@@ -997,38 +997,58 @@ module.exports = calc;
 
 /***/ }),
 
-/***/ "./parts/modalDesign.js":
-/*!******************************!*\
-  !*** ./parts/modalDesign.js ***!
-  \******************************/
+/***/ "./parts/modal.js":
+/*!************************!*\
+  !*** ./parts/modal.js ***!
+  \************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function modalDesign() {
-  var button = document.querySelectorAll('.button-design'),
-      modal = document.querySelector('.popup-design'),
+function modal() {
+  //modal design
+  var buttonDesign = document.querySelectorAll('.button-design'),
+      modalDesign = document.querySelector('.popup-design'),
       close = document.getElementById('close');
-  button.forEach(function (item) {
-    item.addEventListener('click', function () {
-      modal.style.display = 'block';
-      document.body.style.overflow = 'hidden';
-    });
-  });
 
-  function closeModal() {
-    modal.style.display = 'none';
+  function openModal(a) {
+    a.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(a) {
+    a.style.display = 'none';
     document.body.style.overflow = '';
   }
 
-  close.addEventListener('click', function () {
-    closeModal();
+  buttonDesign.forEach(function (item) {
+    item.addEventListener('click', function () {
+      openModal(modalDesign);
+    });
   });
-  modal.addEventListener('click', function () {
-    closeModal();
+  close.addEventListener('click', function () {
+    return closeModal(modalDesign);
+  });
+  modalDesign.addEventListener('click', function () {
+    return closeModal(modalDesign);
+  }); //modal consultation
+
+  var btnConsultation = document.querySelectorAll('.button-consultation'),
+      modalConsultation = document.querySelector('.popup-consultation'),
+      closeConsultation = document.getElementById('close2');
+  btnConsultation.forEach(function (item) {
+    item.addEventListener('click', function () {
+      return openModal(modalConsultation);
+    });
+  });
+  closeConsultation.addEventListener('click', function () {
+    return closeModal(modalConsultation);
+  });
+  modalConsultation.addEventListener('click', function () {
+    return closeModal(modalConsultation);
   });
 }
 
-module.exports = modalDesign;
+module.exports = modal;
 
 /***/ }),
 
