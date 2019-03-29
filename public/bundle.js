@@ -1045,6 +1045,21 @@ function modal() {
   });
   modalConsultation.addEventListener('click', function () {
     return closeModal(modalConsultation);
+  }); //gift
+
+  var btnGift = document.querySelector('.fixed-gift'),
+      modalGift = document.querySelector('.popup-gift'),
+      closeGift = document.getElementById('close3');
+  btnGift.addEventListener('click', function () {
+    return openModal(modalGift);
+  });
+  closeGift.addEventListener('click', function () {
+    closeModal(modalGift);
+    btnGift.style.display = 'none';
+  });
+  modalGift.addEventListener('click', function () {
+    closeModal(modalGift);
+    btnGift.style.display = 'none';
   });
 }
 

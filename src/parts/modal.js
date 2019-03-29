@@ -34,6 +34,22 @@ function modal() {
 
     closeConsultation.addEventListener('click', () => closeModal(modalConsultation));
     modalConsultation.addEventListener('click', () => closeModal(modalConsultation));
+
+    //gift
+    let btnGift = document.querySelector('.fixed-gift'),
+        modalGift = document.querySelector('.popup-gift'),
+        closeGift = document.getElementById('close3');
+
+    btnGift.addEventListener('click', () => openModal(modalGift));
+
+    closeGift.addEventListener('click', () => {
+        closeModal(modalGift);
+        btnGift.style.display = 'none';
+    });
+    modalGift.addEventListener('click', () => {
+        closeModal(modalGift);
+        btnGift.style.display = 'none';
+    });
 }
 
 module.exports = modal;
