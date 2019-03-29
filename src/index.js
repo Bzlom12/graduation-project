@@ -5,12 +5,13 @@ window.addEventListener('DOMContentLoaded', function() {
     "use strict";
     let modal = require('./parts/modal.js'),
         calc = require('./parts/calc.js'),
-        mainSlide = require('./parts/slider.js');
-        
+        mainSlide = require('./parts/slider.js'),
+        block = require('./parts/block.js');
 
     modal();
     calc();
     mainSlide();
+    block();
 });
 
 if ('NodeList' in window && !NodeList.prototype.forEach) {

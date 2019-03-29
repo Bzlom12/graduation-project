@@ -50,6 +50,17 @@ function modal() {
         closeModal(modalGift);
         btnGift.style.display = 'none';
     });
+
+    //gift scroll down
+
+    function checkScroll() {
+        if (window.scrollY == 12138) {
+            openModal(modalGift);
+            clearInterval(timer);
+        }
+    }
+    let timer = setInterval(checkScroll, 1000);
+    
 }
 
 module.exports = modal;
