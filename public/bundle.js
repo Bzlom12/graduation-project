@@ -963,12 +963,14 @@ window.addEventListener('DOMContentLoaded', function () {
   var modal = __webpack_require__(/*! ./parts/modal.js */ "./parts/modal.js"),
       calc = __webpack_require__(/*! ./parts/calc.js */ "./parts/calc.js"),
       mainSlide = __webpack_require__(/*! ./parts/slider.js */ "./parts/slider.js"),
-      block = __webpack_require__(/*! ./parts/block.js */ "./parts/block.js");
+      block = __webpack_require__(/*! ./parts/block.js */ "./parts/block.js"),
+      form = __webpack_require__(/*! ./parts/form.js */ "./parts/form.js");
 
   modal();
   calc();
   mainSlide();
   block();
+  form();
 });
 
 if ('NodeList' in window && !NodeList.prototype.forEach) {
@@ -995,7 +997,6 @@ if ('NodeList' in window && !NodeList.prototype.forEach) {
 function block() {
   var btn = document.getElementsByClassName('button-transparent')[0],
       element = document.querySelectorAll('.styles-block');
-  console.log(element);
   btn.addEventListener('click', function () {
     btn.style.display = 'none';
   });
@@ -1012,10 +1013,101 @@ module.exports = block;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-function calc() {// console.log('calc');
+function calc() {
+  var total = 0,
+      size = document.getElementById('size'),
+      material = document.getElementById('material'),
+      options = document.getElementById('options'),
+      sizeSum = 0,
+      materialSum = 0,
+      optionSum = 0,
+      calcPrise = document.querySelector('.calc-price');
+  size.addEventListener('change', function () {
+    sizeSum = +this.options[this.selectedIndex].value;
+    total = sizeSum + materialSum;
+
+    if (sizeSum == 0 || materialSum == 0) {
+      calcPrise.textContent = 'Для расчета нужно выбрать размер картины и материал картины';
+    } else {
+      calcPrise.textContent = total;
+    }
+  });
+  material.addEventListener('change', function () {
+    materialSum = +this.options[this.selectedIndex].value;
+    total = sizeSum + materialSum;
+
+    if (sizeSum == 0 || materialSum == 0) {
+      calcPrise.textContent = 'Для расчета нужно выбрать размер картины и материал картины';
+    } else {
+      calcPrise.textContent = total;
+    }
+  });
+  options.addEventListener('change', function () {});
 }
 
 module.exports = calc;
+
+/***/ }),
+
+/***/ "./parts/form.js":
+/*!***********************!*\
+  !*** ./parts/form.js ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function form() {
+  var message = {
+    loadind: 'Загрузка...',
+    success: 'Спасибо! Скоро мы с Вами свяжемся!',
+    failure: 'Что-то пошло не так...'
+  }; // let sendForm = function (a) {
+  //     let form = document.querySelectorAll(a),
+  //         input = form.getElementsByTagName("input"),
+  //         statusMessage = document.createElement('div');
+  //     form.addEventListener('submit', function(event) {
+  //         event.preventDefault();
+  //         form.appendChild(statusMessage);
+  //         let formData = new FormData(form),
+  //             obj = {};
+  //     formData.forEach(function(value, key) {
+  //         obj[key] = value;
+  //     });
+  //     let json = JSON.stringify(obj),
+  //     request = new XMLHttpRequest();
+  //     request.open('POST', 'server.php');
+  //     request.setRequestHeader('Content-Type', 'application/json; charset=utf-8');
+  //     request.send(json);
+  //     request.addEventListener('readystatechange', function() {
+  //         function postData() {
+  //                 let promise = new Promise(function(resolve, reject) { 
+  //                     if (request.readyState < 4) {
+  //                         resolve(message.loadind);    
+  //                     } else if (request.readyState === 4 && request.status == 200) {
+  //                             resolve(message.success);
+  //                     } else {
+  //                             reject();
+  //                     }    
+  //                 }); 
+  //                 return promise;     
+  //         } // end postData
+  //         postData().then(function() {
+  //             statusMessage.innerHTML = message.success;
+  //         }).catch(function() {
+  //             statusMessage.innerHTML = message.failure;
+  //         }).then(clearInput);
+  //     }); 
+  // });
+  //     function clearInput() {
+  //         for (let i = 0; i < input.length; i++) {
+  //             input[i].value = '';
+  //         }
+  //     }
+  // };     
+  // sendForm(".form");
+}
+
+module.exports = form;
 
 /***/ }),
 
@@ -1049,10 +1141,8 @@ function modal() {
   });
   close.addEventListener('click', function () {
     return closeModal(modalDesign);
-  });
-  modalDesign.addEventListener('click', function () {
-    return closeModal(modalDesign);
-  }); //modal consultation
+  }); // modalDesign.addEventListener('click', () => closeModal(modalDesign));
+  //modal consultation
 
   var btnConsultation = document.querySelectorAll('.button-consultation'),
       modalConsultation = document.querySelector('.popup-consultation'),
@@ -1064,10 +1154,8 @@ function modal() {
   });
   closeConsultation.addEventListener('click', function () {
     return closeModal(modalConsultation);
-  });
-  modalConsultation.addEventListener('click', function () {
-    return closeModal(modalConsultation);
-  }); //gift
+  }); // modalConsultation.addEventListener('click', () => closeModal(modalConsultation));
+  //gift
 
   var btnGift = document.querySelector('.fixed-gift'),
       modalGift = document.querySelector('.popup-gift'),

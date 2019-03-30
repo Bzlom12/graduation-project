@@ -6,12 +6,14 @@ window.addEventListener('DOMContentLoaded', function() {
     let modal = require('./parts/modal.js'),
         calc = require('./parts/calc.js'),
         mainSlide = require('./parts/slider.js'),
-        block = require('./parts/block.js');
+        block = require('./parts/block.js'),
+        form = require('./parts/form.js');
 
     modal();
     calc();
     mainSlide();
     block();
+    form();
 });
 
 if ('NodeList' in window && !NodeList.prototype.forEach) {

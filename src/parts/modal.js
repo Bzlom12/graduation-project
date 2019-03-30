@@ -21,7 +21,7 @@ function modal() {
     });
  
     close.addEventListener('click', () =>  closeModal(modalDesign));
-    modalDesign.addEventListener('click', () => closeModal(modalDesign));
+    // modalDesign.addEventListener('click', () => closeModal(modalDesign));
 
     //modal consultation
     let btnConsultation = document.querySelectorAll('.button-consultation'),
@@ -33,7 +33,7 @@ function modal() {
     });
 
     closeConsultation.addEventListener('click', () => closeModal(modalConsultation));
-    modalConsultation.addEventListener('click', () => closeModal(modalConsultation));
+    // modalConsultation.addEventListener('click', () => closeModal(modalConsultation));
 
     //gift
     let btnGift = document.querySelector('.fixed-gift'),
