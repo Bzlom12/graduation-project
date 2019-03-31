@@ -3,7 +3,7 @@ function modal() {
     let buttonDesign = document.querySelectorAll('.button-design'),
         modalDesign = document.querySelector('.popup-design'),
         close = document.getElementById('close');
-
+        
     function openModal(a) {
         a.style.display = 'block';
         document.body.style.overflow = 'hidden';
@@ -21,7 +21,11 @@ function modal() {
     });
  
     close.addEventListener('click', () =>  closeModal(modalDesign));
-    // modalDesign.addEventListener('click', () => closeModal(modalDesign));
+    modalDesign.addEventListener('click', (event) => {
+        if (event.target == modalDesign) {
+            closeModal(modalDesign);
+        }
+    });
 
     //modal consultation
     let btnConsultation = document.querySelectorAll('.button-consultation'),
@@ -33,7 +37,11 @@ function modal() {
     });
 
     closeConsultation.addEventListener('click', () => closeModal(modalConsultation));
-    // modalConsultation.addEventListener('click', () => closeModal(modalConsultation));
+    modalConsultation.addEventListener('click', (event) => {
+        if (event.target == modalConsultation) {
+            closeModal(modalConsultation);
+        }
+    });
 
     //gift
     let btnGift = document.querySelector('.fixed-gift'),
@@ -46,9 +54,12 @@ function modal() {
         closeModal(modalGift);
         btnGift.style.display = 'none';
     });
-    modalGift.addEventListener('click', () => {
-        closeModal(modalGift);
-        btnGift.style.display = 'none';
+
+    modalGift.addEventListener('click', (event) => {
+        if (event.target == modalGift) {
+            closeModal(modalGift);
+            btnGift.style.display = 'none';
+        }    
     });
 
     //gift scroll down
@@ -63,10 +74,11 @@ function modal() {
     //modal after 60sec
     let sec = 0;
     function sixtySec() {
-        if (sec == 60) {
+        if (sec == 60 && modalDesign.style.display == '' && modalConsultation.style.display == '' 
+            && modalGift.style.display == '') {
             openModal(modalConsultation);
-            clearInterval(sixtySec);
-        }
+            clearInterval(time);
+        } 
         sec++;
     }
     let time = setInterval(sixtySec, 1000);

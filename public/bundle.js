@@ -1156,8 +1156,12 @@ function modal() {
   });
   close.addEventListener('click', function () {
     return closeModal(modalDesign);
-  }); // modalDesign.addEventListener('click', () => closeModal(modalDesign));
-  //modal consultation
+  });
+  modalDesign.addEventListener('click', function (event) {
+    if (event.target == modalDesign) {
+      closeModal(modalDesign);
+    }
+  }); //modal consultation
 
   var btnConsultation = document.querySelectorAll('.button-consultation'),
       modalConsultation = document.querySelector('.popup-consultation'),
@@ -1169,8 +1173,12 @@ function modal() {
   });
   closeConsultation.addEventListener('click', function () {
     return closeModal(modalConsultation);
-  }); // modalConsultation.addEventListener('click', () => closeModal(modalConsultation));
-  //gift
+  });
+  modalConsultation.addEventListener('click', function (event) {
+    if (event.target == modalConsultation) {
+      closeModal(modalConsultation);
+    }
+  }); //gift
 
   var btnGift = document.querySelector('.fixed-gift'),
       modalGift = document.querySelector('.popup-gift'),
@@ -1182,9 +1190,11 @@ function modal() {
     closeModal(modalGift);
     btnGift.style.display = 'none';
   });
-  modalGift.addEventListener('click', function () {
-    closeModal(modalGift);
-    btnGift.style.display = 'none';
+  modalGift.addEventListener('click', function (event) {
+    if (event.target == modalGift) {
+      closeModal(modalGift);
+      btnGift.style.display = 'none';
+    }
   }); //gift scroll down
 
   function checkScroll() {
@@ -1199,9 +1209,9 @@ function modal() {
   var sec = 0;
 
   function sixtySec() {
-    if (sec == 60) {
+    if (sec == 60 && modalDesign.style.display == '' && modalConsultation.style.display == '' && modalGift.style.display == '') {
       openModal(modalConsultation);
-      clearInterval(sixtySec);
+      clearInterval(time);
     }
 
     sec++;
