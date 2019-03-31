@@ -64,14 +64,22 @@ function modal() {
 
     //gift scroll down
     function checkScroll() {
-        if (window.scrollY == 12138) {
+        let scrollHeight = Math.max(
+            document.body.scrollHeight, document.documentElement.scrollHeight,
+            document.body.offsetHeight, document.documentElement.offsetHeight,
+            document.body.clientHeight, document.documentElement.clientHeight
+            ),
+            b = window.pageYOffset, 
+            dif = scrollHeight - b;
+
+        if (dif < 920) {
             openModal(modalGift);
             clearInterval(timer);
         }
-    }
+    }    
     let timer = setInterval(checkScroll, 1000);
     
-    //modal after 60sec
+    // modal after 60sec
     let sec = 0;
     function sixtySec() {
         if (sec == 60 && modalDesign.style.display == '' && modalConsultation.style.display == '' 

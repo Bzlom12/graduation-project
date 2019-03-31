@@ -1198,13 +1198,17 @@ function modal() {
   }); //gift scroll down
 
   function checkScroll() {
-    if (window.scrollY == 12138) {
+    var scrollHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight),
+        b = window.pageYOffset,
+        dif = scrollHeight - b;
+
+    if (dif < 920) {
       openModal(modalGift);
       clearInterval(timer);
     }
   }
 
-  var timer = setInterval(checkScroll, 1000); //modal after 60sec
+  var timer = setInterval(checkScroll, 1000); // modal after 60sec
 
   var sec = 0;
 
