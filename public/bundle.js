@@ -964,13 +964,17 @@ window.addEventListener('DOMContentLoaded', function () {
       calc = __webpack_require__(/*! ./parts/calc.js */ "./parts/calc.js"),
       mainSlide = __webpack_require__(/*! ./parts/slider.js */ "./parts/slider.js"),
       block = __webpack_require__(/*! ./parts/block.js */ "./parts/block.js"),
-      form = __webpack_require__(/*! ./parts/form.js */ "./parts/form.js");
+      form = __webpack_require__(/*! ./parts/form.js */ "./parts/form.js"),
+      accordion = __webpack_require__(/*! ./parts/accordion.js */ "./parts/accordion.js"),
+      filter = __webpack_require__(/*! ./parts/filter.js */ "./parts/filter.js");
 
   modal();
   calc();
   mainSlide();
   block();
   form();
+  accordion();
+  filter();
 });
 
 if ('NodeList' in window && !NodeList.prototype.forEach) {
@@ -984,6 +988,34 @@ if ('NodeList' in window && !NodeList.prototype.forEach) {
     }
   };
 }
+
+/***/ }),
+
+/***/ "./parts/accordion.js":
+/*!****************************!*\
+  !*** ./parts/accordion.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function accordion() {
+  var title = document.querySelectorAll('.accordion-heading'),
+      span = document.querySelectorAll('.accordion-block');
+
+  for (var i = 0; i < title.length; i++) {
+    title[i].addEventListener('click', function () {
+      if (!this.classList.contains('active-y')) {
+        for (var _i = 0; _i < title.length; _i++) {
+          title[_i].classList.remove('active-y');
+        }
+
+        this.classList.add('active-y');
+      }
+    });
+  }
+}
+
+module.exports = accordion;
 
 /***/ }),
 
@@ -1061,6 +1093,78 @@ function calc() {
 }
 
 module.exports = calc;
+
+/***/ }),
+
+/***/ "./parts/filter.js":
+/*!*************************!*\
+  !*** ./parts/filter.js ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function filter() {
+  var menuItem = document.querySelectorAll('.item'),
+      image = document.querySelectorAll('.portfolio-block'),
+      portfolioNO = document.querySelector('.portfolio-no');
+  menuItem.forEach(function (item) {
+    item.addEventListener('click', function (event) {
+      if (event.target.classList.contains('lovers')) {
+        image.forEach(function (elem) {
+          if (!elem.classList.contains('lovers')) {
+            elem.style.display = 'none';
+          } else {
+            elem.style.display = 'block';
+          }
+        });
+      } else if (event.target.classList.contains('girl')) {
+        image.forEach(function (elem) {
+          if (!elem.classList.contains('girl')) {
+            elem.style.display = 'none';
+          } else {
+            elem.style.display = 'block';
+          }
+        });
+      } else if (event.target.classList.contains('chef')) {
+        image.forEach(function (elem) {
+          if (!elem.classList.contains('chef')) {
+            elem.style.display = 'none';
+          } else {
+            elem.style.display = 'block';
+          }
+        });
+      } else if (event.target.classList.contains('grandmother')) {
+        image.forEach(function (elem) {
+          if (!elem.classList.contains('grandmother')) {
+            elem.style.display = 'none';
+            portfolioNO.style.display = 'block';
+          }
+        });
+      } else if (event.target.classList.contains('granddad')) {
+        image.forEach(function (elem) {
+          if (!elem.classList.contains('grandmother')) {
+            elem.style.display = 'none';
+            portfolioNO.style.display = 'block';
+          }
+        });
+      } else if (event.target.classList.contains('guy')) {
+        image.forEach(function (elem) {
+          if (!elem.classList.contains('guy')) {
+            elem.style.display = 'none';
+          } else {
+            elem.style.display = 'block';
+          }
+        });
+      } else if (event.target.classList.contains('active')) {
+        image.forEach(function (elem) {
+          elem.style.display = 'block';
+        });
+      }
+    });
+  });
+}
+
+module.exports = filter;
 
 /***/ }),
 

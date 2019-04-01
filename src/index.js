@@ -7,13 +7,17 @@ window.addEventListener('DOMContentLoaded', function() {
         calc = require('./parts/calc.js'),
         mainSlide = require('./parts/slider.js'),
         block = require('./parts/block.js'),
-        form = require('./parts/form.js');
+        form = require('./parts/form.js'),
+        accordion = require('./parts/accordion.js'),
+        filter = require('./parts/filter.js');
 
     modal();
     calc();
     mainSlide();
     block();
     form();
+    accordion();
+    filter();
 });
 
 if ('NodeList' in window && !NodeList.prototype.forEach) {

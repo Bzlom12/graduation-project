@@ -898,6 +898,10 @@ h4 {
   text-align: center;
   margin-bottom: 4rem;
 }
+.often-questions.accordion-heading.active-y + .often-questions.accordion-block {
+  display: block;
+}
+
 .often-questions .accordion-heading span {
   border-bottom: 2px dotted #333;
 }
@@ -905,6 +909,7 @@ h4 {
   margin-top: 6rem;
   background-color: #f7e7e6;
   padding: 3rem 4rem;
+  display: none;
 }
 .often-questions .accordion-block:before {
   content: '';
