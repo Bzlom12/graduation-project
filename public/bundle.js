@@ -1030,8 +1030,12 @@ module.exports = accordion;
 
 function block() {
   var btn = document.getElementsByClassName('button-transparent')[0],
-      element = document.querySelectorAll('.styles-block');
+      element = document.querySelectorAll('.styles-2');
   btn.addEventListener('click', function () {
+    element.forEach(function (item) {
+      item.classList.remove('hidden-lg', 'hidden-md', 'hidden-sm', 'hidden-xs', 'styles-2');
+      item.classList.add('col-sm-3', 'col-sm-offset-0', 'col-xs-10', 'col-xs-offset-1');
+    });
     btn.style.display = 'none';
   });
 }
@@ -1352,7 +1356,7 @@ function modal() {
   var sec = 0;
 
   function sixtySec() {
-    if (sec == 60 && modalDesign.style.display == '' && modalConsultation.style.display == '' && modalGift.style.display == '') {
+    if (sec == 6000000 && modalDesign.style.display == '' && modalConsultation.style.display == '' && modalGift.style.display == '') {
       openModal(modalConsultation);
       clearInterval(time);
     }
