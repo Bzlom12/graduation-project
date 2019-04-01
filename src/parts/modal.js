@@ -72,7 +72,7 @@ function modal() {
             b = window.pageYOffset, 
             dif = scrollHeight - b;
 
-        if (dif < 920) {
+        if (dif < 1000) {
             openModal(modalGift);
             clearInterval(timer);
         }
