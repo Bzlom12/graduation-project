@@ -1,56 +1,25 @@
 function pictures() {
-    let block = document.querySelectorAll('.sizes-block');
-         
-        block[0].addEventListener("mouseover", function() {
-            changeImgOn("img/sizes-1-1.png",".size-1","size1", 'sprice1', 'fprice1');
-        });
-        block[0].addEventListener("mouseout", function() {
-            changeImgOff("img/sizes-1.png",".size-1","size1", 'sprice1', 'fprice1');
-        });
-    
-        block[1].addEventListener("mouseover", function() {
-            changeImgOn("img/sizes-2-1.png",".size-2","size2", 'sprice2', 'fprice2');
-        });
-        block[1].addEventListener("mouseout", function() {
-            changeImgOff("img/sizes-2.png",".size-2","size2", 'sprice2', 'fprice2');
-        });
+    let block = document.querySelectorAll('.sizes-block'),
+        image = document.getElementsByClassName('image'),
+        size = document.querySelectorAll('.size'),
+        startPrice = document.querySelectorAll('.starting-price'),
+        finalPrice = document.querySelectorAll('.final-price');
 
-        block[2].addEventListener("mouseover", function() {
-            changeImgOn("img/sizes-3-1.png",".size-3","size3", 'sprice3', 'fprice3');
+    for (let i = 0; i < block.length; i++) {
+        block[i].addEventListener('mouseover', function() {
+            image[i].src = `img/sizes-${i+1}-1.png`;
+            size[i].style.display = 'none';
+            startPrice[i].style.display = 'none';
+            finalPrice[i].style.display = 'none'; 
         });
-        block[2].addEventListener("mouseout", function() {
-            changeImgOff("img/sizes-3.png",".size-3","size3", 'sprice3', 'fprice3');
+        block[i].addEventListener('mouseout', function() {
+            image[i].src = `img/sizes-${i+1}.png`;
+            size[i].style.display = 'block';
+            startPrice[i].style.display = 'block';
+            finalPrice[i].style.display = 'block'; 
         });
-
-        block[3].addEventListener("mouseover", function() {
-            changeImgOn("img/sizes-4-1.png",".size-4","size4", 'sprice4', 'fprice4');
-        });
-        block[3].addEventListener("mouseout", function() {
-            changeImgOff("img/sizes-4.png",".size-4","size4", 'sprice4', 'fprice4');
-        });
-
-    function changeImgOn(img, sel, selec1, selec2, selec3) {
-    let el = document.querySelector(sel),
-        el1 = document.getElementById(selec1),
-        el2 = document.getElementById(selec2),
-        el3 = document.getElementById(selec3);
-        
-        el.src = img;
-        el1.style.display = 'none';
-        el2.style.display = 'none';
-        el3.style.display = 'none';
     }
-    function changeImgOff(img, sel, selec1, selec2, selec3) {
-    let el = document.querySelector(sel),
-        el1 = document.getElementById(selec1),
-        el2 = document.getElementById(selec2),
-        el3 = document.getElementById(selec3);
 
-        el.src = img;
-        el1.style.display = 'block';
-        el2.style.display = 'block';
-        el3.style.display = 'block';
-    }
 }
 
 module.exports = pictures;
