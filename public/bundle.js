@@ -1526,10 +1526,12 @@ function mainSlide() {
   }
 
   prev.addEventListener('click', function () {
-    plusSlides(-1);
+    plusSlides(-2);
+    clearInterval(nextSlide2);
   });
   next.addEventListener('click', function () {
     plusSlides(1);
+    clearInterval(nextSlide2);
   });
   var nextSlide2 = setInterval(sliderWantAlso, 5000);
 }
