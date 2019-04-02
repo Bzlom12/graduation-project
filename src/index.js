@@ -10,7 +10,8 @@ window.addEventListener('DOMContentLoaded', function() {
         form = require('./parts/form.js'),
         accordion = require('./parts/accordion.js'),
         filter = require('./parts/filter.js'),
-        pictures = require('./parts/pictures.js');
+        pictures = require('./parts/pictures.js'),
+        menu = require('./parts/menu.js');
 
     modal();
     calc();
@@ -20,6 +21,7 @@ window.addEventListener('DOMContentLoaded', function() {
     accordion();
     filter();
     pictures();
+    menu();
 });
 
 if ('NodeList' in window && !NodeList.prototype.forEach) {

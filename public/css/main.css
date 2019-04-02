@@ -185,8 +185,11 @@ h4 {
   height: 1.5rem;
   margin-left: 1rem;
 }
-.header .burger-menu {
+.burger-menu {
   display: none;
+}
+.header .burger-menu {
+  
   position: absolute;
   background-color: #fff;
   z-index: 10;

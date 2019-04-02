@@ -967,7 +967,8 @@ window.addEventListener('DOMContentLoaded', function () {
       form = __webpack_require__(/*! ./parts/form.js */ "./parts/form.js"),
       accordion = __webpack_require__(/*! ./parts/accordion.js */ "./parts/accordion.js"),
       filter = __webpack_require__(/*! ./parts/filter.js */ "./parts/filter.js"),
-      pictures = __webpack_require__(/*! ./parts/pictures.js */ "./parts/pictures.js");
+      pictures = __webpack_require__(/*! ./parts/pictures.js */ "./parts/pictures.js"),
+      menu = __webpack_require__(/*! ./parts/menu.js */ "./parts/menu.js");
 
   modal();
   calc();
@@ -977,6 +978,7 @@ window.addEventListener('DOMContentLoaded', function () {
   accordion();
   filter();
   pictures();
+  menu();
 });
 
 if ('NodeList' in window && !NodeList.prototype.forEach) {
@@ -1273,6 +1275,31 @@ function form() {
 }
 
 module.exports = form;
+
+/***/ }),
+
+/***/ "./parts/menu.js":
+/*!***********************!*\
+  !*** ./parts/menu.js ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function menu() {
+  var btn = document.querySelector('.burger');
+  menuItem = document.querySelector('.burger-menu');
+  window.addEventListener('resize', function () {
+    if (document.body.clientWidth < 768) {
+      btn.addEventListener('click', function () {
+        menuItem.style.display = 'block';
+      });
+    } else {
+      menuItem.style.display = 'none';
+    }
+  });
+}
+
+module.exports = menu;
 
 /***/ }),
 
