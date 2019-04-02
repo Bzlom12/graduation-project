@@ -1,12 +1,6 @@
 function pictures() {
-    let block = document.querySelectorAll('.sizes-block'),
-        // el = document.querySelector('.size-1'),
-        size = document.querySelector('.sprice2'),
-        startPrice = document.querySelector('.starting-price'),
-        finalPrice = document.querySelector('.final-price');
-
-        
-
+    let block = document.querySelectorAll('.sizes-block');
+         
         block[0].addEventListener("mouseover", function() {
             changeImgOn("img/sizes-1-1.png",".size-1","size1", 'sprice1', 'fprice1');
         });
@@ -17,21 +11,21 @@ function pictures() {
         block[1].addEventListener("mouseover", function() {
             changeImgOn("img/sizes-2-1.png",".size-2","size2", 'sprice2', 'fprice2');
         });
-        block[1].addEventListener("mouseover", function() {
+        block[1].addEventListener("mouseout", function() {
             changeImgOff("img/sizes-2.png",".size-2","size2", 'sprice2', 'fprice2');
         });
 
         block[2].addEventListener("mouseover", function() {
             changeImgOn("img/sizes-3-1.png",".size-3","size3", 'sprice3', 'fprice3');
         });
-        block[2].addEventListener("mouseover", function() {
+        block[2].addEventListener("mouseout", function() {
             changeImgOff("img/sizes-3.png",".size-3","size3", 'sprice3', 'fprice3');
         });
 
         block[3].addEventListener("mouseover", function() {
             changeImgOn("img/sizes-4-1.png",".size-4","size4", 'sprice4', 'fprice4');
         });
-        block[3].addEventListener("mouseover", function() {
+        block[3].addEventListener("mouseout", function() {
             changeImgOff("img/sizes-4.png",".size-4","size4", 'sprice4', 'fprice4');
         });
 
@@ -57,13 +51,6 @@ function pictures() {
         el2.style.display = 'block';
         el3.style.display = 'block';
     }
-    
-    
-            // .size.style.display = 'none';
-            // .startPrice.style.display = 'none';
-            // .finalPrice.style.display = 'none';
-   
-
 }
 
 module.exports = pictures;
