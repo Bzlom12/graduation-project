@@ -5,7 +5,11 @@ function filter() {
     
 
     menuItem.forEach(function(item) {
-        item.addEventListener('click', function(event) {   
+        item.addEventListener('click', function(event) {
+            for (let i = 0; i < menuItem.length; i++) {
+                menuItem[i].classList.remove('active');
+            }
+            event.target.classList.add('active');
             if (event.target.classList.contains('lovers')){ 
                 image.forEach(function(elem) {
                     if (!(elem.classList.contains('lovers'))) {
