@@ -6,7 +6,7 @@
 	<title>Картины.art - портрет на холсте</title>
 </head>
 <body>
-	<img class="fixed-gift wow pulse infinite" src=img/gift.png alt>
+	<img class="fixed-gift wow pulse infinite animated zoomIn" src=img/gift.png alt>
 	<header class=header>
 		<div class=container>
 			<div class="col-md-2 col-sm-3 col-xs-6">
@@ -94,10 +94,10 @@
 			<div class=row>
 				<div class=col-md-7>
 					<div class=main-slider>
-						<div class=main-slider-item>
+						<div class="main-slider-item animated zoomIn">
 							<img src=img/main-1.png alt>
 						</div>
-						<div class=main-slider-item>
+						<div class="main-slider-item animated zoomIn" >
 							<img src=img/main-2.png alt>
 						</div>
 					</div>
@@ -144,7 +144,7 @@
 			<h2>Популярные стили рисунка</h2>
 			<div class=row>
 				<div class="col-sm-3 col-sm-offset-0 col-xs-10 col-xs-offset-1">
-					<div class=styles-block>
+					<div class="styles-block">
 						<img src=img/styles-1.jpg alt>
 						<h4>Маслом</h4>
 						<a href>Подробнее</a>
@@ -172,28 +172,28 @@
 					</div>
 				</div>
 				<div class="hidden-lg hidden-md hidden-sm hidden-xs styles-2">
-					<div class=styles-block>
+					<div class="styles-block animated fadeInDown">
 						<img src=img/styles-5.jpg alt>
 						<h4>Пастелью</h4>
 						<a href>Подробнее</a>
 					</div>
 				</div>
 				<div class="hidden-lg hidden-md hidden-sm hidden-xs styles-2">
-					<div class=styles-block>
+					<div class="styles-block animated fadeInDown">
 						<img src=img/styles-6.jpg alt>
 						<h4>Поп-арт</h4>
 						<a href>Подробнее</a>
 					</div>
 				</div>
 				<div class="hidden-lg hidden-md hidden-sm hidden-xs styles-2">
-					<div class=styles-block>
+					<div class="styles-block animated fadeInDown">
 						<img src=img/styles-7.png alt>
 						<h4>Фотомозаика</h4>
 						<a href>Подробнее</a>
 					</div>
 				</div>
 				<div class="hidden-lg hidden-md hidden-sm hidden-xs styles-2">
-					<div class=styles-block>
+					<div class="styles-block animated fadeInDown">
 						<img src=img/styles-8.jpg alt>
 						<h4>Шарж</h4>
 						<a href>Подробнее</a>
@@ -368,28 +368,28 @@
 				<div class=sizes-wrapper>
 					<div class=sizes-block>
 						<img class=size-1 src=img/sizes-1.png alt>
-						<p class=size>40x50</p>
-						<p class=starting-price>5 290 руб.</p>
-						<p class=final-price>3 670 руб.</p>
+						<p id="size1" class="size">40x50</p>
+						<p id="sprice1" class=starting-price>5 290 руб.</p>
+						<p id="fprice1" class=final-price>3 670 руб.</p>
 					</div>
 					<div class=sizes-block>
 						<img class=size-2 src=img/sizes-2.png alt>
-						<p class=size>50x70</p>
-						<p class=starting-price>5 290 руб.</p>
-						<p class=final-price>3 670 руб.</p>
+						<p id="size2" class="size">50x70</p>
+						<p id="sprice2" class="starting-price">5 290 руб.</p>
+						<p id="fprice2" class="final-price">3 670 руб.</p>
 					</div>
 					<div class=sizes-block>
 						<img class=size-3 src=img/sizes-3.png alt>
-						<p class=size>70x70</p>
-						<p class=starting-price>5 290 руб.</p>
-						<p class=final-price>3 670 руб.</p>
-						<p class=sizes-hit>Хит продаж</p>
+						<p class="size">70x70</p>
+						<p id="size3" class="starting-price">5 290 руб.</p>
+						<p id="sprice3" class="final-price">3 670 руб.</p>
+						<p id="fprice3" class=sizes-hit>Хит продаж</p>
 					</div>
 					<div class=sizes-block>
 						<img class=size-4 src=img/sizes-4.png alt>
-						<p class=size>70x100</p>
-						<p class=starting-price>5 290 руб.</p>
-						<p class=final-price>3 670 руб.</p>
+						<p id="size4" class="size">70x100</p>
+						<p id="sprice4" class="starting-price">5 290 руб.</p>
+						<p id="fprice4" class="final-price">3 670 руб.</p>
 					</div>
 				</div>
 			</div>
@@ -498,7 +498,7 @@
 				<button class="main-slider-btn main-next-btn">
 					<img src="img/right-arr.png">
 				</button>
-				<div class=feedback-slider-item>
+				<div class="feedback-slider-item animated fadeInLeft">
 					<div class=col-sm-5>
 						<div class=feedback-block>
 							<img src=img/feedback-1.png alt>
@@ -511,7 +511,7 @@
 						<p class=feedback-signature><span>Олег Петров,</span> д. Месягутово</p>
 					</div>
 				</div>
-				<div class=feedback-slider-item>
+				<div class="feedback-slider-item animated fadeInLeft">
 					<div class=col-sm-5>
 						<div class=feedback-block>
 							<img src=img/feedback-2.jpg alt>
@@ -524,7 +524,7 @@
 						<p class=feedback-signature><span>Ирина Антонова,</span> г. Кисловодск</p>
 					</div>
 				</div>
-				<div class=feedback-slider-item>
+				<div class="feedback-slider-item animated fadeInLeft">
 					<div class=col-sm-5>
 						<div class=feedback-block>
 							<img src=img/feedback-3.jpg alt>
@@ -547,25 +547,25 @@
 			<h2>Ответим на любой из ваших вопросов</h2>
 			<div id=accordion>
 				<p class="accordion-heading col-md-8 col-md-offset-2"><span>Сколько времени нужно для изготовления заказа?</span></p>
-				<div class="col-md-8 col-md-offset-2 accordion-block">
+				<div class="col-md-8 col-md-offset-2 accordion-block animated fadeInDown">
 					<p>
 						Время выполнения заказа зависит от трех факторов: сложности картины, стиля написания и размера. Среднее время выполнения заказа составляет 7 дней без учета времени на доставку. В ряде случаев по желанию заказчика можно уменьшить срок до 5 дней.<br><br>Примечание: Если Вы решите что-то изменить в картине, внести коррективы - это может занять дополнительное время, которое не учитывается при оговоренном сроке выполнения.
 					</p>
 				</div>
 				<p class="accordion-heading col-md-8 col-md-offset-2"><span>Смогу ли я увидеть картину до ее получения?</span></p>
-				<div class="col-md-8 col-md-offset-2 accordion-block">
+				<div class="col-md-8 col-md-offset-2 accordion-block animated fadeInDown">
 					<p>
 						Да. По готовности, мы отправляем по электронной почте цифровое фото Вашей картины, для того, чтобы Вы смогли, при необходимости внести свои корректировки и пожелания, если таковые будут. Вы также сможете увидеть картину "вживую" в нашем салоне. Сообщите об этом Вашему менеджеру.
 					</p>
 				</div>
 				<p class="accordion-heading col-md-8 col-md-offset-2"><span>Какого формата должны быть фотографии</span></p>
-				<div class="col-md-8 col-md-offset-2 accordion-block">
+				<div class="col-md-8 col-md-offset-2 accordion-block animated fadeInDown">
 					<p>
 						Мы работаем со всеми известными форматами изображений! Через сайт вы можете загрузить JPEG, TIFF, PNG размером до 50 мегабайт. Вы должны обладать авторскими правами или иметь разрешение на использование изображения. Если у Вас другой формат изображения (RAW, PDF), то вы можете воспользоваться FTP загрузчиком. Если вы хотите сделать фото из бумажной фотографии (не цифровой), пришлите его нам, мы отсканируем, обработаем и вернем фото вместе с вашим заказом!
 					</p>
 				</div>
 				<p class="accordion-heading col-md-8 col-md-offset-2"><span>Могу ли я дать особые указания художнику</span></p>
-				<div class="col-md-8 col-md-offset-2 accordion-block">
+				<div class="col-md-8 col-md-offset-2 accordion-block animated fadeInDown">
 					<p>
 						Когда вы размещаете свой заказ на сайте, вы можете добавить свои комментарии в специальном текстовом поле. Вы также можете: объединить объекты с разных фото в одно или удалить объекты с фото, можете поменять задний фон, поменять одежду, наряды, сделать цветную картину с черно-белого фото, а также заказать картину с поврежденного или старого фото.
 					</p>
@@ -658,7 +658,7 @@
 	</footer>
 	<div class=popup-consultation>
 		<div class=popup-dialog>
-			<div class=popup-content>
+			<div class="popup-content animated fadeIn">
 				<button id="close2"class=popup-close>&times;</button>
 				<h4>Остались вопросы? Закажите обратный звонок</h4>
 				<div class=main-form>
@@ -673,7 +673,7 @@
 	</div>
 	<div class="popup-gift">
 		<div class=popup-dialog>
-			<div class=popup-content>
+			<div class="popup-content animated fadeIn">
 				<button id="close3" class=popup-close>&times;</button>
 				<h2>У нас для вас есть подарок!</h2>
 				<img src="img/gift.png" alt="">
@@ -681,9 +681,9 @@
 			</div>
 		</div>
 	</div>
-	<div class=popup-design>
+	<div class="popup-design">
 		<div class=popup-dialog>
-			<div class=popup-content>
+			<div class="popup-content animated fadeIn">
 				<button id="close" class=popup-close>&times;</button>
 				<form class="formDesine" action="server.php" method="POST"  enctype=multipart/form-data>
 					<h4>Заказать дизайн портрета</h4>
@@ -705,7 +705,7 @@
 			</div>
 		</div>
 	</div>
-
+	<link rel="stylesheet" href="css/animate.css">
 	<link rel=stylesheet href=css/bootstrap.css>
 	<link rel=stylesheet href=css/main.css>
 	<script src="bundle.js"></script>

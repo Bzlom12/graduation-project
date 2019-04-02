@@ -3,7 +3,6 @@ function filter() {
         image = document.querySelectorAll('.portfolio-block'),
         portfolioNO = document.querySelector('.portfolio-no');
     
-
     menuItem.forEach(function(item) {
         item.addEventListener('click', function(event) {
             for (let i = 0; i < menuItem.length; i++) {

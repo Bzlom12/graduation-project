@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "formdata-polyfill": "^3.0.17",
-    "promise-polyfill": "^8.1.0"
+    "promise-polyfill": "^8.1.0",
+    "wow.js": "^1.2.2"
   }
 }

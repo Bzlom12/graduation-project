@@ -14,7 +14,7 @@ function mainSlide() {
     }
     showSlides(slideIndex);
     
-    let nextSlide = setInterval(showSlides, 4000);
+    let nextSlide = setInterval(showSlides, 5000);
 
     //slider Want also
     let slidesWantAlso = document.querySelectorAll('.feedback-slider-item'),
@@ -23,7 +23,7 @@ function mainSlide() {
         slideInd = 1;
 
     function sliderWantAlso(n) {
-        if (n > slidesWantAlso.length) {
+        if (n > slidesWantAlso.length || slideInd > slidesWantAlso.length) {
             slideInd = 1;
         }
         if (n < 1) {
@@ -31,8 +31,10 @@ function mainSlide() {
         }
         slidesWantAlso.forEach((item) => item.style.display = 'none');
         slidesWantAlso[slideInd - 1].style.display = 'block';
+        slideInd++;
+        
     }
-    sliderWantAlso(slideIndex);
+    sliderWantAlso(slideInd);
    
     function plusSlides(n) {
         sliderWantAlso(slideInd += n);
@@ -44,6 +46,8 @@ function mainSlide() {
     next.addEventListener('click', function() {
         plusSlides(1);
     });
+
+    let nextSlide2 = setInterval(sliderWantAlso, 5000);
 }
 
 module.exports = mainSlide;

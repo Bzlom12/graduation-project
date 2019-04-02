@@ -11,7 +11,6 @@ function accordion() {
             }
             title[i].classList.add('active');
             span[i].classList.add('active-y');
-            console.log('da');
         });     
     }   
 }
