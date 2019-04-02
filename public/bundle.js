@@ -1225,7 +1225,7 @@ function form() {
             if (request.readyState < 4) {
               resolve(message.loadind);
             } else if (request.readyState === 4 && request.status == 200) {
-              resolve(message.success);
+              resolve(alert(message.success));
             } else {
               reject();
             }
@@ -1233,10 +1233,8 @@ function form() {
           return promise;
         }
 
-        postData().then(function () {
-          statusMessage.innerHTML = message.success;
-        }).catch(function () {
-          statusMessage.innerHTML = message.failure;
+        postData().catch(function () {
+          statusMessage.innerHTML = alert(message.failure);
         }).then(clearInput);
       });
     });
