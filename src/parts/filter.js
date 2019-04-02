@@ -2,10 +2,11 @@ function filter() {
     let menuItem = document.querySelectorAll('.item'),
         image = document.querySelectorAll('.portfolio-block'),
         portfolioNO = document.querySelector('.portfolio-no');
-        
+    
+
     menuItem.forEach(function(item) {
-        item.addEventListener('click', function(event) {
-            if (event.target.classList.contains('lovers')){
+        item.addEventListener('click', function(event) {   
+            if (event.target.classList.contains('lovers')){ 
                 image.forEach(function(elem) {
                     if (!(elem.classList.contains('lovers'))) {
                         elem.style.display = 'none';

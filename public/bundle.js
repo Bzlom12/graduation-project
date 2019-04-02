@@ -1004,16 +1004,23 @@ function accordion() {
   var title = document.querySelectorAll('.accordion-heading'),
       span = document.querySelectorAll('.accordion-block');
 
-  for (var i = 0; i < title.length; i++) {
+  var _loop = function _loop(i) {
     title[i].addEventListener('click', function () {
-      if (!this.classList.contains('active-y')) {
-        for (var _i = 0; _i < title.length; _i++) {
-          title[_i].classList.remove('active-y');
-        }
+      title[i].classList.add('active');
 
-        this.classList.add('active-y');
+      for (var j = 0; j < span.length; j++) {
+        span[j].classList.remove('active-y');
+        title[j].classList.remove('active');
       }
+
+      title[i].classList.add('active');
+      span[i].classList.add('active-y');
+      console.log('da');
     });
+  };
+
+  for (var i = 0; i < title.length; i++) {
+    _loop(i);
   }
 }
 
