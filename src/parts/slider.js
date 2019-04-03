@@ -45,7 +45,7 @@ function mainSlide() {
         clearInterval(nextSlide2);
     });
     next.addEventListener('click', function() {
-        plusSlides(1);
+        plusSlides(0);
         clearInterval(nextSlide2);
     });
 

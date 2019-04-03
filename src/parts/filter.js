@@ -6,6 +6,7 @@ function filter() {
     function check(a, b, c = 0) {
         if(!(a.classList.contains(b))){
             a.style.display = 'none';
+            portfolioNO.style.display = 'none';
         } else {
             a.style.display = 'block';
             portfolioNO.style.display = 'none';
@@ -26,6 +27,10 @@ function filter() {
                 image.forEach(function(elem) {
                     check(elem, 'lovers');
                 });
+            } else if (event.target.classList.contains('all')) {
+                image.forEach(function(elem) {
+                    check(elem, 'all');
+                });   
             } else if (event.target.classList.contains('girl')) {
                 image.forEach(function(elem) {
                     check(elem, 'girl');

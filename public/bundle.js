@@ -1127,6 +1127,7 @@ function filter() {
 
     if (!a.classList.contains(b)) {
       a.style.display = 'none';
+      portfolioNO.style.display = 'none';
     } else {
       a.style.display = 'block';
       portfolioNO.style.display = 'none';
@@ -1149,6 +1150,10 @@ function filter() {
       if (event.target.classList.contains('lovers')) {
         image.forEach(function (elem) {
           check(elem, 'lovers');
+        });
+      } else if (event.target.classList.contains('all')) {
+        image.forEach(function (elem) {
+          check(elem, 'all');
         });
       } else if (event.target.classList.contains('girl')) {
         image.forEach(function (elem) {
@@ -1500,7 +1505,7 @@ function mainSlide() {
     clearInterval(nextSlide2);
   });
   next.addEventListener('click', function () {
-    plusSlides(1);
+    plusSlides(0);
     clearInterval(nextSlide2);
   });
   var nextSlide2 = setInterval(sliderWantAlso, 5000);
