@@ -1127,7 +1127,6 @@ function filter() {
 
     if (!a.classList.contains(b)) {
       a.style.display = 'none';
-      portfolioNO.style.display = 'none';
     } else {
       a.style.display = 'block';
       portfolioNO.style.display = 'none';
@@ -1393,7 +1392,7 @@ function modal() {
   var sec = 0;
 
   function sixtySec() {
-    if (sec == 6000000 && modalDesign.style.display == '' && modalConsultation.style.display == '' && modalGift.style.display == '') {
+    if (sec == 60 && modalDesign.style.display == '' && modalConsultation.style.display == '' && modalGift.style.display == '') {
       openModal(modalConsultation);
       clearInterval(time);
     }

@@ -6,7 +6,6 @@ function filter() {
     function check(a, b, c = 0) {
         if(!(a.classList.contains(b))){
             a.style.display = 'none';
-            portfolioNO.style.display = 'none';
         } else {
             a.style.display = 'block';
             portfolioNO.style.display = 'none';
@@ -24,35 +23,35 @@ function filter() {
             }
             event.target.classList.add('active');
             if (event.target.classList.contains('lovers')){ 
-                image.forEach(function(elem) {
+                image.forEach((elem) => {
                     check(elem, 'lovers');
                 });
             } else if (event.target.classList.contains('all')) {
-                image.forEach(function(elem) {
+                image.forEach((elem) => {
                     check(elem, 'all');
                 });   
             } else if (event.target.classList.contains('girl')) {
-                image.forEach(function(elem) {
+                image.forEach((elem) => {
                     check(elem, 'girl');
                 }); 
             } else if (event.target.classList.contains('chef')) {
-                image.forEach(function(elem) {
+                image.forEach((elem) => {
                     check(elem, 'chef');
                 }); 
             } else if (event.target.classList.contains('grandmother')) {
-                image.forEach(function(elem) {
+                image.forEach((elem) => {
                     check(elem, 'grandmother', 1);
                 }); 
             } else if (event.target.classList.contains('granddad')) {
-                image.forEach(function(elem) {
+                image.forEach((elem) => {
                     check(elem, "granddad", 1);
                 }); 
             } else if (event.target.classList.contains('guy')) {
-                image.forEach(function(elem) {
+                image.forEach((elem) => {
                     check(elem, 'guy');
                 }); 
             } else if (event.target.classList.contains('active')) {
-                image.forEach(function(elem) {
+                image.forEach((elem) => {
                     elem.style.display = 'block';
                 });
             }

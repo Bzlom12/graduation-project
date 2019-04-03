@@ -82,7 +82,7 @@ function modal() {
     // modal after 60sec
     let sec = 0;
     function sixtySec() {
-        if (sec == 6000000 && modalDesign.style.display == '' && modalConsultation.style.display == '' 
+        if (sec == 60 && modalDesign.style.display == '' && modalConsultation.style.display == '' 
             && modalGift.style.display == '') {
             openModal(modalConsultation);
             clearInterval(time);
