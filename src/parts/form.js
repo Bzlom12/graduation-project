@@ -38,10 +38,15 @@ function form() {
             }
             postData().catch(function() {
                 statusMessage.innerHTML = alert(message.failure);
-            }).then(clearInput);
+            }).then(clearInput).then(clearCom('comment'));
         }); 
     });
- 
+
+        function clearCom(elem) {
+            a = document.getElementById(elem);
+            a.value = "";
+        }
+
         function clearInput() {
             for (let i = 0; i < input.length; i++) {
                 input[i].value = '';

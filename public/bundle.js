@@ -1064,12 +1064,16 @@ function calc() {
       size = document.getElementById('size'),
       material = document.getElementById('material'),
       options = document.getElementById('options'),
+      btnCalc = document.querySelector('.button-calc'),
       sizeSum = 0,
       materialSum = 0,
       optionSum = 0,
       calcPrise = document.querySelector('.calc-price'),
       promocode = document.querySelector('.promocode'),
       value;
+  btnCalc.addEventListener('click', function () {
+    event.preventDefault();
+  });
   size.addEventListener('change', function () {
     sizeSum = +this.options[this.selectedIndex].value;
     calcTotal(sizeSum, materialSum, optionSum, value);
@@ -1234,9 +1238,14 @@ function form() {
 
         postData().catch(function () {
           statusMessage.innerHTML = alert(message.failure);
-        }).then(clearInput);
+        }).then(clearInput).then(clearCom('comment'));
       });
     });
+
+    function clearCom(elem) {
+      a = document.getElementById(elem);
+      a.value = "";
+    }
 
     function clearInput() {
       for (var i = 0; i < input.length; i++) {
@@ -1293,7 +1302,11 @@ function menu() {
   window.addEventListener('resize', function () {
     if (document.body.clientWidth < 768) {
       btn.addEventListener('click', function () {
-        menuItem.style.display = 'block';
+        if (menuItem.classList.contains('active-y')) {
+          menuItem.classList.remove('active-y');
+        } else {
+          menuItem.classList.add('active-y');
+        }
       });
     } else {
       menuItem.style.display = 'none';

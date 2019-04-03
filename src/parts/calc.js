@@ -4,12 +4,17 @@ function calc() {
         size = document.getElementById('size'),
         material = document.getElementById('material'),
         options = document.getElementById('options'),
+        btnCalc = document.querySelector('.button-calc'),
         sizeSum = 0,
         materialSum = 0,
         optionSum = 0,
         calcPrise = document.querySelector('.calc-price'),
         promocode = document.querySelector('.promocode'),
         value;
+        
+    btnCalc.addEventListener('click', function() {
+        event.preventDefault();
+    });
         
     size.addEventListener('change', function() {
         sizeSum = +this.options[this.selectedIndex].value;
