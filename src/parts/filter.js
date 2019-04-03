@@ -3,6 +3,19 @@ function filter() {
         image = document.querySelectorAll('.portfolio-block'),
         portfolioNO = document.querySelector('.portfolio-no');
     
+    function check(a, b, c = 0) {
+        if(!(a.classList.contains(b))){
+            a.style.display = 'none';
+        } else {
+            a.style.display = 'block';
+            portfolioNO.style.display = 'none';
+        }
+        if (!(a.classList.contains(b)) && c == 1) {
+            a.style.display = 'none';
+            portfolioNO.style.display = 'block';
+        }
+    }
+
     menuItem.forEach(function(item) {
         item.addEventListener('click', function(event) {
             for (let i = 0; i < menuItem.length; i++) {
@@ -11,49 +24,27 @@ function filter() {
             event.target.classList.add('active');
             if (event.target.classList.contains('lovers')){ 
                 image.forEach(function(elem) {
-                    if (!(elem.classList.contains('lovers'))) {
-                        elem.style.display = 'none';
-                    } else {
-                        elem.style.display = 'block';
-                    }
+                    check(elem, 'lovers');
                 });
             } else if (event.target.classList.contains('girl')) {
                 image.forEach(function(elem) {
-                    if (!(elem.classList.contains('girl'))) {
-                        elem.style.display = 'none';
-                    } else {
-                        elem.style.display = 'block';
-                    }
+                    check(elem, 'girl');
                 }); 
             } else if (event.target.classList.contains('chef')) {
                 image.forEach(function(elem) {
-                    if (!(elem.classList.contains('chef'))) {
-                        elem.style.display = 'none';
-                    } else {
-                        elem.style.display = 'block';
-                    }
+                    check(elem, 'chef');
                 }); 
             } else if (event.target.classList.contains('grandmother')) {
                 image.forEach(function(elem) {
-                    if (!(elem.classList.contains('grandmother'))) {
-                        elem.style.display = 'none';
-                        portfolioNO.style.display = 'block';
-                    }
+                    check(elem, 'grandmother', 1);
                 }); 
             } else if (event.target.classList.contains('granddad')) {
                 image.forEach(function(elem) {
-                    if (!(elem.classList.contains('grandmother'))) {
-                        elem.style.display = 'none';
-                        portfolioNO.style.display = 'block';
-                    }
+                    check(elem, "granddad", 1);
                 }); 
             } else if (event.target.classList.contains('guy')) {
                 image.forEach(function(elem) {
-                    if (!(elem.classList.contains('guy'))) {
-                        elem.style.display = 'none';
-                    } else {
-                        elem.style.display = 'block';
-                    }
+                    check(elem, 'guy');
                 }); 
             } else if (event.target.classList.contains('active')) {
                 image.forEach(function(elem) {
